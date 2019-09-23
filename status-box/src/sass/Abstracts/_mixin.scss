@@ -1,0 +1,10 @@
+@mixin displayFlex($type) {
+  display: flex;
+  flex-direction: #{$type};
+  flex-wrap: nowrap;
+}
+
+@mixin breakoutPadding {
+  margin-left: -12px;
+  width: calc(100% + 24px);
+}

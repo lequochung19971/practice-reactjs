@@ -1,0 +1,146 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  background-color: #e9ebee;
+  font-size: 13px;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+}
+
+.status-box {
+  max-width: 500px;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #929292;
+  padding: 12px;
+  background-color: #ffffff;
+  margin: 40px auto;
+}
+
+.user {
+  display: flex;
+  padding-bottom: 6px;
+}
+.user__avatar {
+  margin-right: 8px;
+}
+.user__avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.user__name-time {
+  display: flex;
+  align-content: space-between;
+  flex-direction: column;
+  padding-top: 3px;
+}
+.user__name-time a {
+  text-decoration: none;
+  color: #385898;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.user__name-time p {
+  font-size: 12px;
+  color: #616770;
+}
+
+.status__text {
+  line-height: 1.38;
+}
+.status__img img {
+  margin-top: 6px;
+  margin-left: -12px;
+  width: calc(100% + 24px);
+}
+
+.total {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #606770;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dadde1;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-left: -12px;
+  width: calc(100% + 24px);
+  justify-content: space-around;
+  border-bottom: 1px solid #dadde1;
+}
+.button a {
+  text-decoration: none;
+  color: #606770;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.comments {
+  margin-top: 10px;
+}
+.comments .comment {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.comments .comment__user-avatar {
+  margin-right: 8px;
+}
+.comments .comment__user-avatar img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.comments .comment__description {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: #e9ebee;
+  border-radius: 15px;
+  padding: 10px;
+}
+.comments .comment__description-username {
+  text-decoration: none;
+  color: #385898;
+  font-weight: 600;
+}
+.comments .comment__description-text {
+  color: #1c1e21;
+  font-size: 13px;
+}
+.comments__previous {
+  text-decoration: none;
+  color: #385898;
+  font-size: 13px;
+}
+.comments__input {
+  margin-top: 8px;
+}
+.comments__input input[type=text] {
+  padding-left: 10px;
+  width: calc(100% - 10px);
+  height: 32px;
+  border-radius: 15px;
+  border: 1px solid #dadde1;
+  background-color: #e9ebee;
+}
+
+/*# sourceMappingURL=style.css.map */

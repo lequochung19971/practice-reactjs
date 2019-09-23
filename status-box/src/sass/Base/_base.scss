@@ -1,0 +1,13 @@
+// To content initialization styles (html, body,...)
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  background-color: #e9ebee;
+  font-size: 13px;
+}
