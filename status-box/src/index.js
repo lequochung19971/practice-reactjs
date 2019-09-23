@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./style.css";
 
-import { User } from "./app/users/user";
-import { Status } from "./app/status/status";
-import { Button } from "./app/others/btn-like-cmt";
-import { Comments } from "./app/comment/comment";
-import data from "./app/data.json";
+import { User } from "./components/users/user";
+import { Status } from "./components/status/status";
+import { Button } from "./components/others/btn-like-cmt";
+import { Comments } from "./components/comment/comment";
+import data from "./components/data.json";
 
 let dataStatusBox = data;
 class App extends React.Component {
