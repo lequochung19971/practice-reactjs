@@ -1,12 +1,12 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faThumbsUp,
   faCommentAlt,
   faShare
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
-class Total extends React.Component {
+class Total extends React.PureComponent {
   render() {
     return (
       <section className="total">
@@ -20,39 +20,39 @@ class Total extends React.Component {
   }
 }
 
-export class Button extends React.Component {
+export default class Button extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLiked: this.props.dataStatus.status.checkbeLike
+      isLiked: false,
+      colorLike: '#606770',
+      countLike: this.props.dataStatus.total.countLike
     };
   }
 
-  handleLike = event => {
-    this.setState(state => ({
+  handleLike = (event) => {
+    if (this.state.isLiked) {
+      this.setState({ colorLike: '#606770' });
+      this.setState((state) => ({
+        countLike: state.countLike - 1
+      }));
+    } else {
+      this.setState({ colorLike: '#0026ff' });
+      this.setState((state) => ({
+        countLike: state.countLike + 1
+      }));
+    }
+    this.setState((state) => ({
       isLiked: !state.isLiked
     }));
-    if (this.state.isLiked) {
-      this.props.dataStatus.total.countLike -= 1;
-    } else {
-      this.props.dataStatus.total.countLike += 1;
-    }
+
     event.preventDefault();
   };
 
   render() {
-    let colorLike;
-    const dataStatus = this.props.dataStatus;
-    if (this.state.isLiked) {
-      colorLike = { color: "#0026ff" };
-      dataStatus.status.checkbeLiked = true;
-      dataStatus.total.countLike += 1;
-    } else {
-      colorLike = { color: "#606770" };
-      dataStatus.status.checkbeLiked = false;
-      dataStatus.total.countLike -= 1;
-    }
-    let countLike = dataStatus.total.countLike;
+    const { dataStatus } = this.props;
+    const color = this.state.colorLike;
+    const countLike = this.state.countLike;
     let countCmt = dataStatus.comment.length;
     let countShare = dataStatus.total.countShare;
 
@@ -68,7 +68,7 @@ export class Button extends React.Component {
             href="c"
             className="button__like"
             onClick={this.handleLike}
-            style={colorLike}
+            style={{ color: color }}
           >
             <FontAwesomeIcon icon={faThumbsUp} /> Like
           </a>

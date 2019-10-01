@@ -1,85 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.11.1/css/all.css"
+      integrity="sha384-IT8OQ5/IfeLGe8ZMxjj3QQNqT0zhBJSiFCL3uolrGgKRuenIU+mMS94kck/AHZWu"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Status Box</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.1/css/all.css"
-    integrity="sha384-IT8OQ5/IfeLGe8ZMxjj3QQNqT0zhBJSiFCL3uolrGgKRuenIU+mMS94kck/AHZWu" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <title>Status Box</title>
-</head>
-
-<body>
-  <div id="root">
-    <article class="status-box">
-      <section class="user">
-        <div class="user__avatar">
-          <img src="images/avatar.jpg" alt="">
-        </div>
-        <div class="user__name-time">
-          <a href="">Lorem Ipsum is simply dummy text of the printing and typesetting industr</a>
-          <p>11 hrs</p>
-        </div>
-      </section>
-      <section class="status">
-        <div class="status__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          Lorem Ipsum
-          has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-          galley of
-          type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-          also the leap
-          into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
-          the release
-          of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-          software like
-          Aldus PageMaker including versions of Lorem Ipsum.</div>
-        <div class="status__img">
-          <img src="images/avatar.jpg" alt="">
-        </div>
-      </section>
-      <section class="total">
-        <span class="total__like">15 likes</span>
-        <div class="total__cmt-share">
-          <span class="total__cmt">10 comments</span>
-          <span class="total__share">1 shares</span>
-        </div>
-      </section>
-      <div class="button">
-        <a href="" class="button__like"><i class="far fa-thumbs-up"></i> Like</a>
-        <a href="" class="button__cmt"><i class="far fa-comment-alt"></i> Comment</a>
-        <a href="" class="button__share"><i class="fas fa-share"></i> Share</a>
-      </div>
-      <div class="comments">
-        <section class="comment">
-          <div class="comment__user-avatar">
-            <img src="images/avatar.jpg" alt="">
+  <body>
+    <div id="root">
+      <article class="status-box">
+        <section class="user">
+          <div class="user__avatar">
+            <img src="images/avatar.jpg" alt="" />
           </div>
-          <div class="comment__description">
-            <p class="comment__description-text">
-              <a href="" class="comment__description-username">Hùng </a>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.</p>
+          <div class="user__name-time">
+            <a href=""
+              >Lorem Ipsum is simply dummy text of the printing and typesetting
+              industr</a
+            >
+            <p>11 hrs</p>
           </div>
         </section>
-        <section class="comment">
-          <div class="comment__user-avatar">
-            <img src="images/avatar.jpg" alt="">
+        <section class="status">
+          <div class="status__text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
           </div>
-          <div class="comment__description">
-            <p class="comment__description-text">
-              <a href="" class="comment__description-username">Hùng </a>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.</p>
+          <div class="status__img">
+            <img src="images/avatar.jpg" alt="" />
           </div>
         </section>
-      </div>
-
-
-    </article>
-  </div>
-
-</body>
-
+        <section class="total">
+          <span class="total__like">15 likes</span>
+          <div class="total__cmt-share">
+            <span class="total__cmt">10 comments</span>
+            <span class="total__share">1 shares</span>
+          </div>
+        </section>
+        <div class="button">
+          <a href="" class="button__like"
+            ><i class="far fa-thumbs-up"></i> Like</a
+          >
+          <a href="" class="button__cmt"
+            ><i class="far fa-comment-alt"></i> Comment</a
+          >
+          <a href="" class="button__share"
+            ><i class="fas fa-share"></i> Share</a
+          >
+        </div>
+        <div class="comments">
+          <section class="comment">
+            <div class="main-comment">
+              <div class="comment__user-avatar">
+                <img src="images/avatar.jpg" alt="" />
+              </div>
+              <div class="comment__description">
+                <p class="comment__description-text">
+                  <a href="" class="comment__description-username">Hùng </a>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+              </div>
+            </div>
+            <div class="sub-comment">
+              <div class="comment__user-avatar">
+                <img src="images/avatar.jpg" alt="" />
+              </div>
+              <div class="comment__description">
+                <p class="comment__description-text">
+                  <a href="" class="comment__description-username">Hùng </a>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="comment">
+            <div class="comment__user-avatar">
+              <img src="images/avatar.jpg" alt="" />
+            </div>
+            <div class="comment__description">
+              <p class="comment__description-text">
+                <a href="" class="comment__description-username">Hùng </a>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.
+              </p>
+            </div>
+          </section>
+        </div>
+      </article>
+    </div>
+  </body>
 </html>

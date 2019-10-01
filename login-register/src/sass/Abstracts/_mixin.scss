@@ -1,0 +1,8 @@
+@mixin borderBottom {
+  border-bottom: solid 2px $mainColor;
+}
+
+@mixin headerBox {
+  font-size: 25px;
+  @include borderBottom;
+}

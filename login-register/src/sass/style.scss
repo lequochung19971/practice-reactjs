@@ -1,0 +1,82 @@
+@import 'Abstracts/variables';
+@import 'Abstracts/mixin';
+@import 'Base/base';
+
+.root-container {
+  width: 350px;
+  margin: 100px auto;
+}
+
+.box-controller {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  box-shadow: $boxShadow;
+  cursor: pointer;
+  .btn-controller {
+    background: none;
+    border: none;
+    width: 100%;
+    padding: {
+      top: 15px;
+      bottom: 15px;
+    }
+  }
+
+  .selected {
+    @include borderBottom;
+  }
+}
+
+.box-container {
+  line-height: 2;
+  box-shadow: $boxShadow;
+  padding: 20px;
+  text-align: center;
+  header {
+    @include headerBox;
+  }
+
+  .input-group {
+    margin-top: 20px;
+    width: 100%;
+    label {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    input {
+      width: 90%;
+      padding: 15px;
+      border: solid 1px $mainColor;
+
+      &.error {
+        border: solid 2px $colorErr;
+      }
+
+      &:focus {
+        border: solid 2px $mainColor;
+        box-shadow: 0 0 3px $mainColor;
+      }
+    }
+    transition: all 1s;
+  }
+
+  button {
+    margin-top: 40px;
+    width: 100%;
+    border: solid 1px $mainColor;
+    padding: 10px;
+    background-color: #ffffff;
+    color: $mainColor;
+    font-size: 20px;
+
+    &:hover {
+      border: solid 1px $mainColor;
+      background-color: $mainColor;
+      color: #ffffff;
+    }
+  }
+}

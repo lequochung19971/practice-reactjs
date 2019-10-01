@@ -1,11 +1,13 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export class User extends React.Component {
   render() {
+    const { dataStatus } = this.props;
     return (
       <section className="user">
         <div className="user__avatar">
-          <img src={this.props.dataStatus.user.avatar} alt=""></img>
+          <img src={dataStatus.user.avatar} alt="user" />
         </div>
         <div className="user__name-time">
           <a href="https://www.facebook.com/quochung.le.1420">
@@ -18,3 +20,7 @@ export class User extends React.Component {
     );
   }
 }
+
+User.propTypes = {
+  dataStatus: PropTypes.object
+};
