@@ -1,10 +1,14 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
-function PostData(userData) {
+function PostData(apiUrl, userData) {
   return new Promise((resolve, reject) => {
-    fetch('http://localhost:3000/user', {
+    fetch(`http://localhost:8000/auth/${apiUrl}`, {
       method: 'POST',
-      body: JSON.stringify(userData)
+      body: JSON.stringify(userData),
+      headers: {
+        'Content-type': 'application/json'
+      }
     })
       .then((respone) => respone.json())
       .then((responeJson) => {
@@ -15,11 +19,10 @@ function PostData(userData) {
       });
   });
 }
-
-export default class Login extends React.PureComponent {
+class Login extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = { errors: [], username: '', password: '' };
+    this.state = { errors: [], email: '', password: '', redirect: false };
   }
 
   showErr = (el, bool) => {
@@ -28,8 +31,8 @@ export default class Login extends React.PureComponent {
     }));
   };
 
-  onUsernameChange = (event) => {
-    this.setState({ username: event.target.value });
+  onemailChange = (event) => {
+    this.setState({ email: event.target.value });
   };
 
   onPasswordChange = (event) => {
@@ -37,18 +40,26 @@ export default class Login extends React.PureComponent {
   };
 
   submitLogin = () => {
-    const { username, password } = this.state;
-    if (username === '') {
-      this.showErr('username', true);
+    const { email, password } = this.state;
+    console.log({ email, password });
+    if (email === '') {
+      this.showErr('email', true);
     }
     if (password === '') {
       this.showErr('password', true);
     }
 
-    if (username !== '' && password !== '') {
-      PostData({ username, password }).then((result) => {
+    if (email !== '' && password !== '') {
+      PostData('login', { email, password }).then((result) => {
         const resJson = result;
-        console.log(resJson);
+
+        if (resJson.access_token) {
+          localStorage.setItem('userData', JSON.stringify(resJson));
+          // console.log(resJson);
+          this.props.history.push('/home');
+        } else {
+          console.log('error');
+        }
       });
     }
   };
@@ -61,30 +72,34 @@ export default class Login extends React.PureComponent {
   // };
 
   render() {
-    let usernameErr = false,
+    let emailErr = false,
       passwordErr = false;
     const { errors } = this.state;
     for (const err of errors) {
-      if (err.el === 'username') {
-        usernameErr = true;
+      if (err.el === 'email') {
+        emailErr = true;
       }
       if (err.el === 'password') {
         passwordErr = true;
       }
     }
+    if (localStorage.getItem('userData')) {
+      this.props.history.push('/home');
+    }
+
     return (
       <div>
         <header>Login</header>
         <div className="box-input">
           <div className="input-group">
-            <label htmlFor="username">
-              Username
+            <label htmlFor="email">
+              Email
               <input
                 type="text"
-                name="username"
-                placeholder="Username"
-                onChange={this.onUsernameChange}
-                className={usernameErr ? 'error' : ''}
+                name="email"
+                placeholder="email"
+                onChange={this.onemailChange}
+                className={emailErr ? 'error' : ''}
               />
             </label>
           </div>
@@ -112,3 +127,5 @@ export default class Login extends React.PureComponent {
     );
   }
 }
+
+export default withRouter(Login);

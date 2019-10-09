@@ -1,10 +1,11 @@
 html {
   color: #333333;
   background: #333333;
+  scroll-behavior: smooth;
 }
 
 .weather {
   width: 1400px;
   margin: auto;
-  background
+  background: #d55bda;
 }
